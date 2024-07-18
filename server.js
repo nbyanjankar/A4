@@ -15,8 +15,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
+
+app.set('views', __dirname + '/views');
+
+
 // Serve static files from the 'Public' directory
 app.use(express.static(path.join(__dirname, 'Public')));
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
